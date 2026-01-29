@@ -8,7 +8,6 @@ RUN mkdir -p /var/cache/nginx/client_temp && \
         mkdir -p /var/cache/nginx/fastcgi_temp && \
         mkdir -p /var/cache/nginx/uwsgi_temp && \
         mkdir -p /var/cache/nginx/scgi_temp && \
-        mkdir -p etc/nginx/conf.d/default.conf \
         chown -R nginx:nginx /var/cache/nginx && \
         chown -R nginx:nginx /etc/nginx/ && \
         chmod -R 755 /etc/nginx/ && \

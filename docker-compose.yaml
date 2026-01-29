@@ -4,6 +4,8 @@ volumes:
   mysql: 
 services:
   mysql: 
+    build:
+      context: ./mysql
     image: mysql:1.0.0 
     networks: 
     - expense 
@@ -12,6 +14,8 @@ services:
       - mysql:/var/lib/mysql 
   
   backend: 
+    build:
+      context: ./backend
     image: backend:1.0.0 
     networks: 
     - expense 
@@ -19,7 +23,9 @@ services:
     depends_on: 
     - mysql 
   
-  frontend: 
+  frontend:
+    build:
+      context: ./frontend
     image: frontend:1.0.0 
     networks:
     - expense 

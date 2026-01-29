@@ -1,3 +1,4 @@
+
 #FROM nginx
 FROM nginx:stable-alpine3.20-perl
 RUN rm -rf /usr/share/nginx/html/index.html
@@ -15,8 +16,8 @@ RUN mkdir -p /var/cache/nginx/client_temp && \
 
 RUN mkdir -p /etc/nginx/ssl/ && \
     chown -R nginx:nginx /etc/nginx/ssl/ && \
-    chmod -R 755 /etc/nginx/ssl/    
- 
+    chmod -R 755 /etc/nginx/ssl/
+
 RUN touch /var/run/nginx.pid && \
     chown -R nginx:nginx /var/run/nginx.pid /run/nginx.pid
 COPY nginx.conf /etc/nginx/nginx.conf
